@@ -74,31 +74,36 @@
 
         /* Mobile adjustments */
 @media (max-width: 600px) {
+    body {
+        align-items: flex-start; /* move up so scaling doesn't push it off screen */
+        padding-top: 20px;
+    }
+
     .calculator {
-        width: 95vw;
-        max-width: 95vw;
-        padding: 25px 20px;
-        border-radius: 20px;
-        transform: scale(1.3); /* Scale up the entire calculator */
-        transform-origin: center;
+        transform: scale(2.8); /* approx 3x size */
+        transform-origin: top center;
+        width: 100vw;
+        max-width: none;
+        padding: 25px;
+        margin: 0 auto;
     }
 
     input[type="text"] {
-        height: 60px;
-        font-size: 28px;
+        height: 70px;
+        font-size: 30px;
     }
 
     .buttons button {
-        width: 65px;
-        height: 65px;
-        font-size: 26px;
-        margin: 6px;
+        height: 80px;
+        font-size: 30px;
+        margin: 8px;
     }
 
     h1 {
-        font-size: 1.6em;
+        font-size: 2em;
     }
 }
+
 
     </style>
 </head>
