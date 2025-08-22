@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Web Calculator</title>
     <style>
         html, body {
@@ -74,25 +74,28 @@
 
         /* Mobile adjustments */
         @media (max-width: 500px) {
-            .calculator {
-                padding: 15px;
-                width: 95vw;
-            }
-
-            input[type="text"] {
-                height: 45px;
-                font-size: 20px;
-            }
-
-            .buttons button {
-                height: 50px;
-                font-size: 18px;
-            }
-
-            h1 {
-                font-size: 1.2em;
-            }
+        .calculator {
+            width: 100vw;
+            max-width: none;
+            margin: 0 10px;
+            padding: 20px 10px;
         }
+
+        input[type="text"] {
+            height: 50px;
+            font-size: 22px;
+        }
+
+        .buttons button {
+            height: 60px;
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 1.3em;
+        }
+        }
+
     </style>
 </head>
 <body>
