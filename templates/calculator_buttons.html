@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Web Calculator</title>
- <style>
+<style>
     body {
         font-family: Arial, sans-serif;
         text-align: center;
@@ -19,13 +19,13 @@
     }
 
     .calculator {
-        padding: 20px;
-        border: 5px solid darkgrey;
-        border-radius: 20px;
         background-color: white;
-        box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
-        width: 320px;
-        max-width: 90vw;
+        border: 10px solid #007BFF; /* Bright blue border */
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(0, 123, 255, 0.8); /* Brighter blue shadow */
+        padding: 20px;
+        width: 100%;
+        max-width: 320px;
         box-sizing: border-box;
     }
 
@@ -74,8 +74,8 @@
     /* Mobile adjustments */
     @media (max-width: 500px) {
         .calculator {
-            width: 95vw;
             padding: 15px;
+            width: 95vw;
         }
 
         input[type="text"] {
@@ -93,7 +93,8 @@
             font-size: 1.2em;
         }
     }
- </style>
+</style>
+
 </head>
 <body>
     <div class="container">
