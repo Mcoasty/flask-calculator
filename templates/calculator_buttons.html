@@ -5,89 +5,89 @@
     <title>Web Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('static/calculator.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('static/calculator.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .calculator {
-            background-color: white;
-            border: 3px solid #007BFF;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
-            padding: 30px;
-            box-sizing: border-box;
-            width: 100%;
-            max-width: 340px;
-        }
+.calculator {
+    background-color: white;
+    border: 3px solid #007BFF;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+    padding: 30px;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+}
 
-        h1 {
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
+h1 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
 
-        input[type="text"] {
-            width: 100%;
-            height: 60px;
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: right;
-            padding: 10px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
+input[type="text"] {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
 
-        .buttons button {
-            height: 70px;
-            font-size: 28px;
-            border-radius: 12px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
+.buttons button {
+    height: 70px;
+    font-size: 26px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
-        .buttons button:hover {
-            background-color: #e0e0e0;
-        }
+.buttons button:hover {
+    background-color: #e0e0e0;
+}
 
-        /* ✅ Mobile-specific scaling */
-        @media (max-width: 600px) {
-            .calculator {
-                transform: scale(3.8); /* Adjust this scale as needed */
-                transform-origin: top center;
-                margin-top: 20px;
-            }
+/* ✅ Mobile View Matching Desktop Look */
+@media (max-width: 500px) {
+    .calculator {
+        width: 90vw;
+        padding: 25px;
+    }
 
-            h1 {
-                font-size: 2rem;
-            }
+    h1 {
+        font-size: 1.8em;
+    }
 
-            input[type="text"] {
-                height: 70px;
-                font-size: 32px;
-            }
+    input[type="text"] {
+        height: 65px;
+        font-size: 28px;
+    }
 
-            .buttons button {
-                height: 80px;
-                font-size: 32px;
-            }
-        }
+    .buttons button {
+        height: 75px;
+        font-size: 28px;
+    }
+}
+
     </style>
 </head>
 <body>
