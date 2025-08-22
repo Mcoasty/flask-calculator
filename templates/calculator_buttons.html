@@ -69,24 +69,22 @@ input[type="text"] {
 /* ✅ Mobile View Matching Desktop Look */
 @media (max-width: 500px) {
     .calculator {
-        width: 90vw;
-        padding: 25px;
-    }
-
-    h1 {
-        font-size: 1.8em;
+        width: 90vw; /* keep it within viewport */
+        max-width: none; /* remove max width */
+        padding: 40px;
     }
 
     input[type="text"] {
-        height: 65px;
-        font-size: 28px;
+        height: 90px;
+        font-size: 36px;
     }
 
     .buttons button {
-        height: 75px;
-        font-size: 28px;
+        height: 90px;
+        font-size: 36px;
     }
 }
+
 
     </style>
 </head>
