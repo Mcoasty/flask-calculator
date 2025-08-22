@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Web Calculator</title>
     <style>
         html, body {
@@ -23,13 +24,14 @@
 
         .calculator {
             background-color: white;
-            border: 10px solid #007BFF; /* Bright blue border */
+            border: 3px solid #007BFF; /* Reduced border */
             border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+            box-shadow: 0 0 25px rgba(0, 123, 255, 0.8); /* Bright blue shadow */
             padding: 20px;
             width: 100%;
             max-width: 320px;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         h1 {
@@ -49,11 +51,16 @@
             border: 1px solid #ccc;
         }
 
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
         .buttons button {
-            width: 60px;
+            width: 100%; /* Fit the grid column */
             height: 60px;
             font-size: 22px;
-            margin: 5px;
             border-radius: 12px;
             border: 1px solid #ccc;
             cursor: pointer;
@@ -62,12 +69,6 @@
 
         .buttons button:hover {
             background-color: #e0e0e0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
         }
 
         /* Mobile adjustments */
@@ -83,9 +84,8 @@
             }
 
             .buttons button {
-                height: 55px;
-                font-size: 20px;
-                margin: 4px;
+                height: 50px;
+                font-size: 18px;
             }
 
             h1 {
@@ -101,26 +101,31 @@
             <input type="text" id="display" name="expression" readonly value="{{ result }}"><br>
             <div class="buttons">
                 <div class="grid">
+                    <!-- Row 1 -->
                     <button type="button" onclick="clearDisplay()">C</button>
                     <button type="button" onclick="appendToDisplay('%')">%</button>
                     <button type="button" onclick="deleteLast()">DEL</button>
                     <button type="button" onclick="appendToDisplay('÷')">÷</button>
 
+                    <!-- Row 2 -->
                     <button type="button" onclick="appendToDisplay('7')">7</button>
                     <button type="button" onclick="appendToDisplay('8')">8</button>
                     <button type="button" onclick="appendToDisplay('9')">9</button>
                     <button type="button" onclick="appendToDisplay('*')">×</button>
 
+                    <!-- Row 3 -->
                     <button type="button" onclick="appendToDisplay('4')">4</button>
                     <button type="button" onclick="appendToDisplay('5')">5</button>
                     <button type="button" onclick="appendToDisplay('6')">6</button>
                     <button type="button" onclick="appendToDisplay('-')">−</button>
 
+                    <!-- Row 4 -->
                     <button type="button" onclick="appendToDisplay('1')">1</button>
                     <button type="button" onclick="appendToDisplay('2')">2</button>
                     <button type="button" onclick="appendToDisplay('3')">3</button>
                     <button type="button" onclick="appendToDisplay('+')">+</button>
 
+                    <!-- Row 5 -->
                     <button type="button" onclick="appendToDisplay('√(')">√</button>
                     <button type="button" onclick="appendToDisplay('0')">0</button>
                     <button type="button" onclick="appendToDisplay('.')">.</button>
