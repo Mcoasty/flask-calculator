@@ -1,0 +1,115 @@
+<!-- templates/calculator_buttons.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Calculator</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            text-align: center; 
+            margin-top: 50px;
+            background-image: url('static/calculator.jpg');
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .calculator { 
+            display: inline-block; 
+            padding: 20px; 
+            border: 5px solid darkgrey; 
+            border-radius: 20px; 
+            background-color: white;
+            box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
+        }
+        input[type="text"] {
+            width: 220px; height: 40px; font-size: 18px; margin-bottom: 10px; text-align: right;
+        }
+        .buttons button {
+            width: 50px; height: 50px; font-size: 18px;
+            margin: 5px; border-radius: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            grid-gap: 10px;
+            justify-content: center;
+        }
+
+        .grid button {
+            height: 50px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .grid div {
+            height: 50px; /* For placeholder */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Web Calculator</h1>
+<div class="calculator">
+        <form method="post">
+            <input type="text" id="display" name="expression" readonly value="{{ result }}"><br>
+    <div class="buttons">
+        <div class="grid">
+        <!-- Row 1: Clear, %, DEL, ÷ -->
+        <button type="button" onclick="clearDisplay()">C</button>
+        <button type="button" onclick="appendToDisplay('%')">%</button>
+        <button type="button" onclick="deleteLast()">DEL</button>
+        <button type="button" onclick="appendToDisplay('÷')">÷</button>
+
+        <!-- Row 2 -->
+        <button type="button" onclick="appendToDisplay('7')">7</button>
+        <button type="button" onclick="appendToDisplay('8')">8</button>
+        <button type="button" onclick="appendToDisplay('9')">9</button>
+        <button type="button" onclick="appendToDisplay('*')">×</button>
+
+        <!-- Row 3 -->
+        <button type="button" onclick="appendToDisplay('4')">4</button>
+        <button type="button" onclick="appendToDisplay('5')">5</button>
+        <button type="button" onclick="appendToDisplay('6')">6</button>
+        <button type="button" onclick="appendToDisplay('-')">−</button>
+
+        <!-- Row 4 -->
+        <button type="button" onclick="appendToDisplay('1')">1</button>
+        <button type="button" onclick="appendToDisplay('2')">2</button>
+        <button type="button" onclick="appendToDisplay('3')">3</button>
+        <button type="button" onclick="appendToDisplay('+')">+</button>
+
+        <!-- Row 5 -->
+        <button type="button" onclick="appendToDisplay('√(')">√</button>
+        <button type="button" onclick="appendToDisplay('0')">0</button>
+        <button type="button" onclick="appendToDisplay('.')">.</button>
+        <button type="submit">=</button>
+
+        <!-- Empty placeholder to keep grid shape -->
+        <div></div>
+
+        <!-- Submit button aligned bottom right -->
+        
+    </div>
+</div>
+
+        </form>
+    </div>
+
+    <script>
+        const display = document.getElementById("display");
+
+        function appendToDisplay(char) {
+            display.value += char;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+    </script>
+</body>
+</html>

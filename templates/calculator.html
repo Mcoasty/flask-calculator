@@ -1,0 +1,35 @@
+<!-- templates/calculator.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        input, select { padding: 10px; margin: 5px; }
+        .result { font-size: 24px; margin-top: 20px; color: green; }
+        .error { font-size: 20px; color: red; }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <form method="post">
+        <input type="text" name="x" placeholder="First number" required><br>
+        <input type="text" name="y" placeholder="Second number" required><br>
+        <select name="operation">
+            <option value="add">Add (+)</option>
+            <option value="subtract">Subtract (-)</option>
+            <option value="multiply">Multiply (*)</option>
+            <option value="divide">Divide (/)</option>
+        </select><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+        <div class="result">Result: {{ result }}</div>
+    {% endif %}
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+</html>
