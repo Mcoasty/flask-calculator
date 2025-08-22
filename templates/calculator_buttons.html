@@ -3,31 +3,44 @@
 <head>
     <title>Web Calculator</title>
     <style>
-        body { 
+        html, body {
+            height: 100%;
+            margin: 0;
             font-family: Arial, sans-serif; 
-            text-align: center; 
-            margin: 20px 0;
             background-image: url('static/calculator.jpg');
             background-size: cover; 
             background-repeat: no-repeat;
             background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-        .calculator { 
-            display: inline-block; 
-            padding: 20px; 
-            border: 5px solid darkgrey; 
-            border-radius: 20px; 
-            background-color: white;
-            box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
-            max-width: 100%;
-            width: 320px; /* max width for desktop */
+        body {
+            /* Add a semi-transparent overlay for better readability */
+            background-color: rgba(255, 255, 255, 0.6);
+            background-blend-mode: lighten;
+            padding: 20px;
             box-sizing: border-box;
+        }
+        .container {
+            max-width: 100%;
+            width: 360px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
+            box-sizing: border-box;
+        }
+        h1 {
+            margin: 0 0 20px;
+            font-size: 1.6rem;
         }
         input[type="text"] {
             width: 100%;
-            height: 50px;
-            font-size: 24px;
-            margin-bottom: 15px;
+            height: 55px;
+            font-size: 26px;
+            margin-bottom: 20px;
             text-align: right;
             padding: 5px 10px;
             box-sizing: border-box;
@@ -35,10 +48,10 @@
             border: 1px solid #ccc;
         }
         .buttons button {
-            width: 60px;
-            height: 60px;
-            font-size: 22px;
-            margin: 5px;
+            width: 65px;
+            height: 65px;
+            font-size: 24px;
+            margin: 7px 5px;
             border-radius: 15px;
             border: 1px solid #ccc;
             cursor: pointer;
@@ -50,48 +63,42 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
+            grid-gap: 12px;
             justify-content: center;
         }
         .grid div {
-            height: 60px; /* Placeholder if needed */
-        }
-        h1 {
-            margin-bottom: 25px;
+            height: 65px; /* Placeholder if needed */
         }
 
-        /* Responsive for smaller screens */
+        /* Responsive tweaks */
         @media (max-width: 600px) {
-            .calculator {
-                width: 95vw; /* almost full screen width on mobile */
+            .container {
+                width: 95vw;
                 padding: 20px;
             }
             input[type="text"] {
-                height: 55px;
-                font-size: 26px;
+                height: 50px;
+                font-size: 24px;
                 margin-bottom: 15px;
             }
             .buttons button {
                 width: 100%;
                 height: 60px;
-                font-size: 24px;
+                font-size: 22px;
                 margin: 6px 0;
-                border-radius: 15px;
-            }
-            .grid {
-                grid-template-columns: repeat(4, 1fr);
-                grid-gap: 12px;
             }
             h1 {
-                font-size: 1.8rem;
-                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
+            .grid {
+                grid-gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Web Calculator</h1>
-    <div class="calculator">
+    <div class="container">
+        <h1>Web Calculator</h1>
         <form method="post">
             <input type="text" id="display" name="expression" readonly value="{{ result }}"><br>
             <div class="buttons">
